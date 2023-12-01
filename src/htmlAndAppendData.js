@@ -1,9 +1,20 @@
-export function createAppend(content, show) {
+function createAppend(content, show) {
   const searchResultDiv = document.createElement('div');
   searchResultDiv.classList.add('search-result');
 
+  const searchResultPoster = document.createElement('div');
+  searchResultPoster.classList.add('search-result-poster');
+
   const posterImg = document.createElement('img');
-  posterImg.src = show.image ? show.image.medium : (show.show.image ? show.show.image.medium : './img/placeholder.jpg');
+  let posterImgSrc = './img/placeholder.jpg';
+
+  if (show.image) {
+    posterImgSrc = show.image.medium;
+  } else if (show.show && show.show.image) {
+    posterImgSrc = show.show.image.medium;
+  }
+  posterImg.src = posterImgSrc;
+
   posterImg.alt = 'Poster';
   posterImg.id = 'poster';
 
@@ -12,34 +23,40 @@ export function createAppend(content, show) {
   title.classList.add('title');
   title.id = 'title';
 
-  const searchResultPoster = document.createElement('div');
-  searchResultPoster.classList.add('search-result-poster');
   searchResultPoster.appendChild(posterImg);
 
   const searchResultName = document.createElement('div');
   searchResultName.classList.add('search-result-name');
   searchResultName.appendChild(title);
 
+  const reactionDiv = document.createElement('div');
+  reactionDiv.classList.add('reaction-action');
+
+  const reaction = document.createElement('div');
+  reaction.classList.add('reaction');
+
+  const likesDiv = document.createElement('div');
+  likesDiv.classList.add('likes');
+
   const likeIcon = document.createElement('img');
-  likeIcon.src = './img/like.png';
+  likeIcon.src = './assets/like.png';
   likeIcon.alt = 'Like';
 
   const likeText = document.createElement('div');
   likeText.textContent = 'Like';
 
+  likesDiv.appendChild(likeIcon);
+  likesDiv.appendChild(likeText);
+
   const likesCounter = document.createElement('div');
   likesCounter.classList.add('counter');
   likesCounter.textContent = '';
 
-  const likesDiv = document.createElement('div');
-  likesDiv.classList.add('likes');
-  likesDiv.appendChild(likeIcon);
-  likesDiv.appendChild(likeText);
-
-  const reaction = document.createElement('div');
-  reaction.classList.add('reaction');
   reaction.appendChild(likesDiv);
   reaction.appendChild(likesCounter);
+
+  const actionsDiv = document.createElement('div');
+  actionsDiv.classList.add('actions');
 
   const commentButton = document.createElement('button');
   commentButton.textContent = 'Comment';
@@ -49,13 +66,9 @@ export function createAppend(content, show) {
   reservationButton.textContent = 'Reservations';
   reservationButton.classList.add('reservation');
 
-  const actionsDiv = document.createElement('div');
-  actionsDiv.classList.add('actions');
   actionsDiv.appendChild(commentButton);
   actionsDiv.appendChild(reservationButton);
 
-  const reactionDiv = document.createElement('div');
-  reactionDiv.classList.add('reaction-action');
   reactionDiv.appendChild(reaction);
   reactionDiv.appendChild(actionsDiv);
 
@@ -65,3 +78,5 @@ export function createAppend(content, show) {
 
   content.appendChild(searchResultDiv);
 }
+
+export default createAppend;
