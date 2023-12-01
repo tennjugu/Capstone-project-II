@@ -40,4 +40,17 @@ export function createAppend(content, show) {
     reaction.classList.add('reaction');
     reaction.appendChild(likesDiv);
     reaction.appendChild(likesCounter);
+
+    const commentButton = document.createElement('button');
+    commentButton.textContent = 'Comment';
+    commentButton.classList.add('comment');
+  
+    const reservationButton = document.createElement('button');
+    reservationButton.textContent = 'Reservations';
+    reservationButton.classList.add('reservation');
+
+    const actionsDiv = document.createElement('div');
+    actionsDiv.classList.add('actions');
+    actionsDiv.appendChild(commentButton);
+    actionsDiv.appendChild(reservationButton);
 }
