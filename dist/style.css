@@ -246,3 +246,40 @@ footer {
 .bottom-nav {
     padding-top: 10px;
 } 
+
+.bottom-nav {
+    display: flex;
+    gap: 50px;
+} 
+
+#partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+  
+.partner-names {
+    display: flex;
+}
+
+.partners-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
+  
+.partner {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.partner:hover {
+    transform: scale(1.05);
+}
+  
+.partner img {
+    max-width: 60%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
