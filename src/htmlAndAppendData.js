@@ -11,7 +11,7 @@ export function createAppend(content, show) {
     title.textContent = show.name || (show.show.name) || 'Title N/A';
     title.classList.add('title');
     title.id = 'title';
-    
+
     const searchResultPoster = document.createElement('div');
     searchResultPoster.classList.add('search-result-poster');
     searchResultPoster.appendChild(posterImg);
@@ -19,4 +19,25 @@ export function createAppend(content, show) {
     const searchResultName = document.createElement('div');
     searchResultName.classList.add('search-result-name');
     searchResultName.appendChild(title);
+
+    const likeIcon = document.createElement('img');
+    likeIcon.src = './img/like.png';
+    likeIcon.alt = 'Like';
+  
+    const likeText = document.createElement('div');
+    likeText.textContent = 'Like';
+  
+    const likesCounter = document.createElement('div');
+    likesCounter.classList.add('counter');
+    likesCounter.textContent = '';
+
+    const likesDiv = document.createElement('div');
+    likesDiv.classList.add('likes');
+    likesDiv.appendChild(likeIcon);
+    likesDiv.appendChild(likeText);
+  
+    const reaction = document.createElement('div');
+    reaction.classList.add('reaction');
+    reaction.appendChild(likesDiv);
+    reaction.appendChild(likesCounter);
 }
