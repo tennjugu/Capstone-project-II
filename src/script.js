@@ -1,7 +1,7 @@
 import { toggleHamburger, windowClick, closeMenu } from './toggleMenu.js';
 import preloader from './loader.js';
 import displayHomeResults from './home.js';
-import displayTvShow from './tvShows.js'
+import displayTvShow from './tvShows.js';
 
 preloader();
 displayHomeResults();
