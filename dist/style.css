@@ -237,41 +237,49 @@ footer {
     padding-top: 20px;
     margin-top: 20px;
 }
+
 .footer-legal a {
     color: #fff;
     text-decoration: none;
     margin-right: 10px;
     transition: color 0.3s ease-in-out;
 }
+
 .footer-links a:hover,
 .social-links a:hover,
 .footer-legal a:hover {
     color: #808080;
 }
+
 @media(max-width:760px){
     header {
         justify-content: space-between;
         font-size: 1em;
         padding-left: 0.5rem;
     }
+
     h1 {
         font-size: 1.7em;
         width: 100%;
     }
+
     .hamburger {
         display: block;
         margin-left: 50px;
         margin-right: 3px;
     }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
     input {
         height: 50%;
         margin-left: 1rem;
@@ -291,6 +299,7 @@ footer {
         box-sizing: border-box;
         z-index: 1;
     }
+
     .nav-item {
         margin: 16px 0;
     }
@@ -298,4 +307,5 @@ footer {
     .nav-items.active {
         left: 0;
     }
+
 }
