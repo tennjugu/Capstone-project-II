@@ -1,4 +1,4 @@
-import createAppend from './htmlAndAppendData.js';
+import createAppend from './moviesCard.js';
 
 const content = document.querySelector('#content');
 async function displayHomeResults() {
@@ -19,6 +19,7 @@ async function displayHomeResults() {
 const home = document.querySelector('#home');
 home.addEventListener('click', (e) => {
   e.preventDefault();
+  content.innerHTML = '';
   displayHomeResults();
 });
 
