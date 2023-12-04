@@ -17,3 +17,14 @@ async function getShowsList() {
     return error;
   }
 }
+
+function displayTvShow() {
+  const tvshow = document.querySelector('#tvshows');
+  tvshow.addEventListener('click', (e) => {
+    e.preventDefault();
+    content.innerHTML = '';
+    getShowsList();
+  });
+}
+
+export default displayTvShow();
