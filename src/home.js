@@ -16,4 +16,10 @@ async function displayHomeResults() {
   }
 }
 
+const home = document.querySelector('#home');
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  displayHomeResults();
+});
+
 export default displayHomeResults;
