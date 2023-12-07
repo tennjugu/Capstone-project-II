@@ -1,20 +1,37 @@
-import { createAppend } from './createhtmlAndApend';
+import createAppend from './moviesCard.js';
+import displayHomeResults from './home.js';
 
 const content = document.getElementById('content');
+const headerSection = document.querySelector('header');
+const contentSection = document.querySelector('content');
+const footerSection = document.querySelector('footer');
+const closeError = document.querySelector('.errorClose');
+const errorDialog = document.querySelector('.errorDialog');
 
-function displayError(message) {
-  const errorElement = document.createElement('div');
-  errorElement.classList.add('error-message');
-  errorElement.textContent = message;
-  errorElement.style.textAlign = 'center';
-  errorElement.style.fontSize = '2rem';
-  content.appendChild(errorElement);
+function disableMainContent() {
+  headerSection.style.pointerEvents = 'none';
+  contentSection.style.pointerEvents = 'none';
+  footerSection.style.pointerEvents = 'none';
+  document.body.style.overflow = 'hidden';
+}
+
+function enableMainContent() {
+  headerSection.style.pointerEvents = 'auto';
+  contentSection.style.pointerEvents = 'auto';
+  footerSection.style.pointerEvents = 'auto';
+  document.body.style.overflow = 'auto';
+}
+
+function showErrorDialog(message) {
+  document.querySelector('.errorMessage').innerText = message;
+  document.querySelector('.errorDialog').style.display = 'block';
+  disableMainContent();
 }
 
 async function fetchedData(response) {
   const result = await response.json();
   if (response.ok && result.length === 0) {
-    displayError('No item found.');
+    showErrorDialog('No item found.');
     return 'No item found.';
   }
   if (response.ok) {
@@ -24,7 +41,7 @@ async function fetchedData(response) {
     return result;
   }
   const errorMessage = `Error in fetchedData: ${result.Error}`;
-  displayError(errorMessage);
+  showErrorDialog(errorMessage);
   return result.Error;
 }
 
@@ -38,13 +55,20 @@ async function getSearchShow() {
       return processedSearch;
     }
     const noInputMessage = 'No search input provided.';
-    displayError(noInputMessage);
+    showErrorDialog(noInputMessage);
   } catch (error) {
     const errorMessage = `${error.message}, unable to complete request.`;
-    displayError(errorMessage);
+    showErrorDialog(errorMessage);
     return error.message;
   }
   return null;
 }
+
+closeError.addEventListener('click', (event) => {
+  event.preventDefault();
+  errorDialog.style.display = 'none';
+  enableMainContent();
+  displayHomeResults();
+});
 
 export default getSearchShow;

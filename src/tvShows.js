@@ -16,11 +16,13 @@ async function getShowsList() {
 }
 
 function displayTvShow() {
-  const tvshow = document.querySelector('#tvshows');
-  tvshow.addEventListener('click', (e) => {
-    e.preventDefault();
-    content.innerHTML = '';
-    getShowsList();
+  const tvshow = document.querySelectorAll('#tvshows');
+  tvshow.forEach((tvshows) => {
+    tvshows.addEventListener('click', (e) => {
+      e.preventDefault();
+      content.innerHTML = '';
+      getShowsList();
+    });
   });
 }
 

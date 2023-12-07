@@ -1,5 +1,8 @@
+import getSearchShow from './searchShow.js';
+
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-items');
+const content = document.querySelector('#content');
 
 function closeMenu() {
   hamburger.classList.remove('active');
@@ -18,5 +21,12 @@ function windowClick(event) {
     closeMenu();
   }
 }
+
+const searchBtn = document.querySelector('.search-button');
+searchBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  content.innerHTML = '';
+  getSearchShow();
+});
 
 export { toggleHamburger, windowClick, closeMenu };
