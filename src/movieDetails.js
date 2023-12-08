@@ -66,21 +66,4 @@ function showMovieDetails(content, movieDetails) {
   content.appendChild(fullDetailsContainer);
 }
 
-// const moviePoster = document.querySelectorAll('search-result-poster');
-// const content = document.querySelector('#content');
-// moviePoster.forEach((poster) => poster.addEventListener('click', () => {
-//   content.style.alignItems = 'normal';
-//   content.innerHTML = '';
-//   showMovieDetails(content, show);
-// }));
-
-// export default showMovieDetails;
-
-const moviePoster = document.querySelectorAll('search-result-poster');
-const content = document.querySelector('#content');
-moviePoster.forEach((poster) => poster.addEventListener('click', () => {
-  console.log('clicked show more');
-  content.style.alignItems = 'normal';
-  content.innerHTML = '';
-  showMovieDetails(content, show);
-}));
+export default showMovieDetails;
