@@ -1,3 +1,14 @@
+let commentStore = [];
+
+class Comment {
+  constructor(date, name, insight, movieId) {
+    this.date = date;
+    this.name = name;
+    this.insight = insight;
+    this.movieId = movieId;
+  }
+}
+
 function createDateLabel() {
   const commentDateLabel = document.createElement('label');
   commentDateLabel.textContent = 'Date';
@@ -86,6 +97,7 @@ function generateCommentForm() {
   for (let i = 0; i < commentFields.length; i += 1) {
     form.appendChild(commentFields[i]);
   }
+
   return form;
 }
 
@@ -106,6 +118,50 @@ function createCommentLogs() {
   return commentLogSection;
 }
 
+function addComment(movieId) {
+  const commentRecords = document.querySelector('.comment-records');
+  commentRecords.innerHTML = '';
+  const filteredComments = commentStore.filter((obj) => obj.movieId === movieId);
+
+  for (let i = 0; i < filteredComments.length; i += 1) {
+    const eachComment = filteredComments[i];
+    const eachRecord = document.createElement('p');
+    eachRecord.className = 'new-record';
+    eachRecord.textContent = `${eachComment.date} ${eachComment.name}: ${eachComment.insight}`;
+    commentRecords.appendChild(eachRecord);
+  }
+}
+
+function createCommentLocalStore() {
+  localStorage.setItem('commentStore', JSON.stringify(commentStore));
+}
+
+function retrieveCommentLocalStore() {
+  const storedTasks = JSON.parse(localStorage.getItem('commentStore'));
+  commentStore = storedTasks || [];
+}
+
+function addCommentToComments() {
+  const date = document.querySelector('#comment-date').value;
+  const name = document.querySelector('#comment-username').value;
+  const insight = document.querySelector('#comment-insights').value;
+  const movieId = document.querySelector('.showId').textContent;
+
+  const newCommentEntry = new Comment(date, name, insight, movieId);
+  commentStore.push(newCommentEntry);
+  addComment(movieId);
+  createCommentLocalStore();
+}
+
+function initializeComments() {
+  retrieveCommentLocalStore();
+  const movieId = document.querySelector('.showId').textContent;
+  addComment(movieId);
+}
+
 export {
-  generateCommentForm, createCommentLogs,
+  generateCommentForm,
+  createCommentLogs,
+  addCommentToComments,
+  initializeComments,
 };
