@@ -1,3 +1,5 @@
+import { createCommentLogs, generateCommentForm } from './comment.js';
+
 function createFullDetailsContainer() {
   const fullDetailsContainer = document.createElement('div');
   fullDetailsContainer.className = 'full-details';
@@ -69,12 +71,11 @@ function createRatingElement(movieDetails) {
   rating.className = 'rating';
   let ratingText = 'Rating: N/A';
 
-  if (movieDetails.rating) {
+  if (movieDetails.rating && movieDetails.rating.average !== null) {
     ratingText = `Rating: ${movieDetails.rating.average}/10`;
-  } else if (movieDetails.show.rating) {
+  } else if (movieDetails.show.rating && movieDetails.show.rating.average !== null) {
     ratingText = `Rating: ${movieDetails.show.rating.average}/10`;
   }
-
   rating.textContent = ratingText;
   return rating;
 }
@@ -89,7 +90,7 @@ function createShowSummaryElement(movieDetails) {
 
   const summary = document.createElement('div');
   summary.className = 'summary';
-  summary.innerHTML = movieDetails.summary || movieDetails.show.summary || 'Summary N/A';
+  summary.innerHTML = movieDetails.summary || movieDetails.show.summary || 'N/A';
 
   showSummary.appendChild(plotTitle);
   showSummary.appendChild(summary);
@@ -133,7 +134,12 @@ function createImageCard(movieDetails) {
 function showMovieDetails(content, movieDetails) {
   const fullDetailsContainer = createFullDetailsContainer();
   const imageCard = createImageCard(movieDetails);
+  const commentLogSection = createCommentLogs();
+  const commentSection = generateCommentForm();
   fullDetailsContainer.appendChild(imageCard);
+  fullDetailsContainer.appendChild(commentLogSection);
+  fullDetailsContainer.appendChild(commentSection);
+
   content.appendChild(fullDetailsContainer);
 }
 
