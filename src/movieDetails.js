@@ -1,4 +1,6 @@
-import { createCommentLogs, generateCommentForm } from './comment.js';
+import {
+  createCommentLogs, generateCommentForm, addCommentToComments, initializeComments,
+} from './comment.js';
 
 function createFullDetailsContainer() {
   const fullDetailsContainer = document.createElement('div');
@@ -139,8 +141,20 @@ function showMovieDetails(content, movieDetails) {
   fullDetailsContainer.appendChild(imageCard);
   fullDetailsContainer.appendChild(commentLogSection);
   fullDetailsContainer.appendChild(commentSection);
-
   content.appendChild(fullDetailsContainer);
+
+  initializeComments();
+
+  const commentSubmit = document.querySelector('.comment-form');
+  commentSubmit.addEventListener('submit', (event) => {
+    const username = document.querySelector('#comment-username');
+    const commentEntered = document.querySelector('#comment-insights');
+    console.log('clicked');
+    event.preventDefault();
+    addCommentToComments();
+    username.value = '';
+    commentEntered.value = '';
+  });
 }
 
 export default showMovieDetails;
