@@ -1,10 +1,10 @@
-function createAppend(content, show) {
-  const searchResultDiv = document.createElement('div');
-  searchResultDiv.classList.add('search-result');
+import showMovieDetails from './movieDetails.js';
 
+const content = document.querySelector('#content');
+
+function createSearchResultPoster(show) {
   const searchResultPoster = document.createElement('div');
   searchResultPoster.classList.add('search-result-poster');
-
   const posterImg = document.createElement('img');
   let posterImgSrc = './img/placeholder.jpg';
 
@@ -17,13 +17,26 @@ function createAppend(content, show) {
 
   posterImg.alt = 'Poster';
   posterImg.id = 'poster';
+  searchResultPoster.appendChild(posterImg);
+  searchResultPoster.addEventListener('click', () => {
+    content.style.alignItems = 'normal';
+    content.innerHTML = '';
+    showMovieDetails(content, show);
+  });
+
+  return searchResultPoster;
+}
+
+function createAppend(content, show) {
+  const searchResultDiv = document.createElement('div');
+  searchResultDiv.classList.add('search-result');
+
+  const posterImg = createSearchResultPoster(show);
 
   const title = document.createElement('h3');
   title.textContent = show.name || (show.show.name) || 'Title N/A';
   title.classList.add('title');
   title.id = 'title';
-
-  searchResultPoster.appendChild(posterImg);
 
   const searchResultName = document.createElement('div');
   searchResultName.classList.add('search-result-name');
@@ -72,7 +85,7 @@ function createAppend(content, show) {
   reactionDiv.appendChild(reaction);
   reactionDiv.appendChild(actionsDiv);
 
-  searchResultDiv.appendChild(searchResultPoster);
+  searchResultDiv.appendChild(posterImg);
   searchResultDiv.appendChild(searchResultName);
   searchResultDiv.appendChild(reactionDiv);
 

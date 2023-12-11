@@ -423,6 +423,51 @@ footer {
     color: #808080;
 }
 
+.full-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.image-card {
+    display: flex;
+}
+
+.image-card img {
+    width: 400px;
+    height: 500px;
+    padding-top: 5px;
+}
+
+.show-info {
+    margin: 0px 20px;
+}
+
+.showTitle {
+    margin-top: 0;
+}
+
+.reservation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation-header,
+.plot,
+.year,
+.genre,
+.rating {
+    margin-bottom: 0;
+}
+
+.year,
+.genre,
+.rating {
+    margin-top: 10px;
+}
+
 @media(max-width:760px){
     header {
         justify-content: space-between;
@@ -503,5 +548,38 @@ footer {
 
     .likes{
         margin-left: 5px;
+    }
+
+    .image-card {
+        flex-direction: column;
+        max-width: 300px;
+    }
+
+   .image-card img {
+         width: 400px;
+        margin: 0 10px;
+    } 
+
+    .show-info {
+        width: 95vw;
+        margin: 0 10px;
+    }
+
+    .full-details {
+        margin: 0;
+        display: flex;
+        padding: 0;
+    }
+
+    header, 
+    footer {
+        width: 100vw;
+    }
+    
+    .year, 
+    .genre, 
+    .language, 
+    .rating {
+        font-size: 1rem;
     }
 }
