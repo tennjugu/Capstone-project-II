@@ -149,7 +149,6 @@ function showMovieDetails(content, movieDetails) {
   commentSubmit.addEventListener('submit', (event) => {
     const username = document.querySelector('#comment-username');
     const commentEntered = document.querySelector('#comment-insights');
-    console.log('clicked');
     event.preventDefault();
     addCommentToComments();
     username.value = '';

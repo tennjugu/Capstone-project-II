@@ -82,7 +82,7 @@ function createCommentFormButton() {
 function generateCommentForm() {
   const form = document.createElement('form');
   form.action = '';
-  form.className = 'comment-form';
+  form.className = 'comment-form scrollcomment';
 
   const commentFields = [
     createDateLabel(),
@@ -104,6 +104,7 @@ function generateCommentForm() {
 function createCommentLogs() {
   const commentLogSection = document.createElement('div');
   commentLogSection.className = 'comment-log-section';
+  commentLogSection.id = 'comment-log-section';
 
   const commentHeader = document.createElement('h2');
   commentHeader.className = 'comment-header';
