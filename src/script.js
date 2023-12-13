@@ -1,11 +1,13 @@
 import { toggleHamburger, windowClick, closeMenu } from './toggleMenu.js';
 import preloader from './loader.js';
 import displayHomeResults from './home.js';
-import displayTvShow from './tvShows.js';
+import displayTvShows from './tvShows.js';
+import handleClick from './activebtn.js';
 
 preloader();
 displayHomeResults();
-displayTvShow();
+displayTvShows();
+handleClick();
 
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelectorAll('.nav-link');

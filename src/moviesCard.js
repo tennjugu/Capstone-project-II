@@ -1,4 +1,5 @@
 import showMovieDetails from './movieDetails.js';
+import toggleLike from './likes.js';
 
 const content = document.querySelector('#content');
 
@@ -90,6 +91,10 @@ function createAppend(content, show) {
   searchResultDiv.appendChild(reactionDiv);
 
   content.appendChild(searchResultDiv);
+
+  likesDiv.addEventListener('click', () => {
+    toggleLike(likesDiv, likesCounter);
+  });
 }
 
 export default createAppend;
