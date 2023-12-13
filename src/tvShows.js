@@ -15,8 +15,9 @@ async function getShowsList() {
   }
 }
 
-function displayTvShow() {
-  const tvshow = document.querySelectorAll('#tvshows');
+const tvshow = document.querySelectorAll('#tvshows');
+
+function displayTvShows() {
   tvshow.forEach((tvshows) => {
     tvshows.addEventListener('click', (e) => {
       e.preventDefault();
@@ -26,4 +27,4 @@ function displayTvShow() {
   });
 }
 
-export default displayTvShow();
+export default displayTvShows;
