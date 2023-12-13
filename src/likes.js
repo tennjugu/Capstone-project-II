@@ -1,10 +1,10 @@
 function toggleLike(likesDiv, likesCounter) {
   if (likesDiv.classList.contains('liked')) {
-    likesCounter.innerHTML = '';
     likesDiv.classList.remove('liked');
+    likesCounter.innerHTML = '';
   } else {
-    likesCounter.innerHTML = 'Like';
     likesDiv.classList.add('liked');
+    likesCounter.innerHTML = 'Liked';
   }
 }
 
