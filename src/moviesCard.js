@@ -94,7 +94,7 @@ function createAppend(content, show) {
 
   likesDiv.addEventListener('click', () => {
     toggleLike(likesDiv, likesCounter);
-  })
+  });
 }
 
 export default createAppend;
