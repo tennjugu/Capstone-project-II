@@ -564,6 +564,15 @@ footer {
         margin-left: 1rem;
     }
 
+    .comment-form input {
+        margin-left: 0;
+    }
+
+    .comment-form {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .nav-items {
         position:absolute;
         left: -100%;
