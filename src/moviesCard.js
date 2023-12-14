@@ -3,21 +3,6 @@ import toggleLike from './likes.js';
 
 const content = document.querySelector('#content');
 
-function scrollIntoView() {
-  const targetId = this.getAttribute('id');
-
-  if (targetId) {
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth',
-      });
-    }
-  }
-}
-
 function createSearchResultPoster(show) {
   const searchResultPoster = document.createElement('div');
   searchResultPoster.classList.add('search-result-poster');
@@ -90,13 +75,6 @@ function createAppend(content, show) {
   const commentButton = document.createElement('button');
   commentButton.textContent = 'Comment';
   commentButton.classList.add('comment');
-  commentButton.id = 'comment-log-section';
-  commentButton.addEventListener('click', () => {
-    content.style.alignItems = 'normal';
-    content.innerHTML = '';
-    showMovieDetails(content, show);
-    scrollIntoView.call(commentButton);
-  });
 
   const reservationButton = document.createElement('button');
   reservationButton.textContent = 'Reservations';
