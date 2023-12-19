@@ -17,3 +17,15 @@ function createDateLabel(forAttribute) {
   
     return dateLabel;
   }
+
+  function createDateInput(id) {
+    const dateInput = document.createElement('input');
+    dateInput.id = id;
+    dateInput.type = 'date';
+    dateInput.style.display = 'none';
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    dateInput.value = formattedDate;
+  
+    return dateInput;
+  }
