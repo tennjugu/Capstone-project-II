@@ -9,3 +9,11 @@ class Reservation {
     this.movieId = movieId;
   }
 }
+
+function createDateLabel(forAttribute) {
+    const dateLabel = document.createElement('label');
+    dateLabel.textContent = forAttribute === 'reservation-start-date' ? 'Start Date' : 'End Date';
+    dateLabel.htmlFor = forAttribute;
+  
+    return dateLabel;
+  }
