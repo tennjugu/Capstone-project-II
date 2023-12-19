@@ -29,3 +29,22 @@ function createDateLabel(forAttribute) {
   
     return dateInput;
   }
+
+  function createNameLabel() {
+    const nameLabel = document.createElement('label');
+    nameLabel.htmlFor = 'comment-username';
+    nameLabel.className = 'comment-username';
+    nameLabel.textContent = 'Name';
+  
+    return nameLabel;
+  }
+
+  function createNameLabel() {
+    const nameLabel = document.createElement('label');
+    nameLabel.htmlFor = 'reservation-username';
+    nameLabel.className = 'reservation-username';
+    nameLabel.textContent = 'Name';
+  
+    return nameLabel;
+  }
+  
