@@ -47,4 +47,13 @@ function createDateLabel(forAttribute) {
   
     return nameLabel;
   }
+
+  function createNameInput() {
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.id = 'rservation-username';
+    nameInput.placeholder = 'name';
+    nameInput.required = true;
   
+    return nameInput;
+  }
