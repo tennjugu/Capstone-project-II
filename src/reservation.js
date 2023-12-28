@@ -11,63 +11,62 @@ class Reservation {
 }
 
 function createDateLabel(forAttribute) {
-    const dateLabel = document.createElement('label');
-    dateLabel.textContent = forAttribute === 'reservation-start-date' ? 'Start Date' : 'End Date';
-    dateLabel.htmlFor = forAttribute;
-  
-    return dateLabel;
-  }
+  const dateLabel = document.createElement('label');
+  dateLabel.textContent = forAttribute === 'reservation-start-date' ? 'Start Date' : 'End Date';
+  dateLabel.htmlFor = forAttribute;
 
-  function createDateInput(id) {
-    const dateInput = document.createElement('input');
-    dateInput.id = id;
-    dateInput.type = 'date';
-    dateInput.style.display = 'none';
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    dateInput.value = formattedDate;
-  
-    return dateInput;
-  }
+  return dateLabel;
+}
 
-  function createNameLabel() {
-    const nameLabel = document.createElement('label');
-    nameLabel.htmlFor = 'comment-username';
-    nameLabel.className = 'comment-username';
-    nameLabel.textContent = 'Name';
-  
-    return nameLabel;
-  }
+function createDateInput(id) {
+  const dateInput = document.createElement('input');
+  dateInput.id = id;
+  dateInput.type = 'date';
+  dateInput.style.display = 'none';
+  const today = new Date();
+  const formattedDate = today.toISOString().split('T')[0];
+  dateInput.value = formattedDate;
 
-  function createNameInput() {
-    const nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.id = 'reservation-username';
-    nameInput.placeholder = 'name';
-    nameInput.required = true;
-  
-    return nameInput;
-  }
- 
-  function createInsightLabel() {
-    const insightsLabel = document.createElement('label');
-    insightsLabel.htmlFor = 'reservation-insights';
-    insightsLabel.className = 'reservation-insights';
-    insightsLabel.textContent = 'Insights';
-  
-    return insightsLabel;
-  }
-  
-  function createInsightTextarea() {
-    const reservationInsightsTextarea = document.createElement('textarea');
-    reservationInsightsTextarea.id = 'reservation-insights';
-    reservationInsightsTextarea.placeholder = 'Your reservation details';
-    reservationInsightsTextarea.rows = '6';
-    reservationInsightsTextarea.required = true;
-  
-    return reservationInsightsTextarea;
-  }
+  return dateInput;
+}
 
+function createNameLabel() {
+  const nameLabel = document.createElement('label');
+  nameLabel.htmlFor = 'comment-username';
+  nameLabel.className = 'comment-username';
+  nameLabel.textContent = 'Name';
+
+  return nameLabel;
+}
+
+function createNameInput() {
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.id = 'reservation-username';
+  nameInput.placeholder = 'name';
+  nameInput.required = true;
+
+  return nameInput;
+}
+
+function createInsightLabel() {
+  const insightsLabel = document.createElement('label');
+  insightsLabel.htmlFor = 'reservation-insights';
+  insightsLabel.className = 'reservation-insights';
+  insightsLabel.textContent = 'Insights';
+
+  return insightsLabel;
+}
+
+function createInsightTextarea() {
+  const reservationInsightsTextarea = document.createElement('textarea');
+  reservationInsightsTextarea.id = 'reservation-insights';
+  reservationInsightsTextarea.placeholder = 'Your reservation details';
+  reservationInsightsTextarea.rows = '6';
+  reservationInsightsTextarea.required = true;
+
+  return reservationInsightsTextarea;
+}
 function createReservationFormButton() {
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
