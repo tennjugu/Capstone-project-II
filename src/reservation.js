@@ -85,3 +85,27 @@ function createReservationFormButton() {
 
   return submitButton;
 }
+
+function generateReservationForm() {
+  const form = document.createElement('form');
+  form.action = '';
+  form.className = 'reservation-form scrollcomment';
+
+  const reservationFields = [
+    createDateLabel('reservation-start-date'),
+    createDateInput('reservation-start-date'),
+    createDateLabel('reservation-end-date'),
+    createDateInput('reservation-end-date'),
+    createNameLabel(),
+    createNameInput(),
+    createInsightLabel(),
+    createInsightTextarea(),
+    createReservationFormButton(),
+  ];
+
+  for (let i = 0; i < reservationFields.length; i += 1) {
+    form.appendChild(reservationFields[i]);
+  }
+
+  return form;
+}
