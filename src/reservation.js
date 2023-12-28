@@ -57,3 +57,22 @@ function createDateLabel(forAttribute) {
   
     return nameInput;
   }
+ 
+function createInsightLabel() {
+  const insightsLabel = document.createElement('label');
+  insightsLabel.htmlFor = 'reservation-insights';
+  insightsLabel.className = 'reservation-insights';
+  insightsLabel.textContent = 'Insights';
+
+  return insightsLabel;
+}
+
+function createReservationInsightTextarea() {
+  const reservationInsightsTextarea = document.createElement('textarea');
+  reservationInsightsTextarea.id = 'reservation-insights';
+  reservationInsightsTextarea.placeholder = 'Your reservation details';
+  reservationInsightsTextarea.rows = '6';
+  reservationInsightsTextarea.required = true;
+
+  return reservationInsightsTextarea;
+}
