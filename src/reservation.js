@@ -76,3 +76,12 @@ function createReservationInsightTextarea() {
 
   return reservationInsightsTextarea;
 }
+
+function createReservationFormButton() {
+  const submitButton = document.createElement('button');
+  submitButton.type = 'submit';
+  submitButton.className = 'submit-reservation';
+  submitButton.textContent = 'Reserve';
+
+  return submitButton;
+}
