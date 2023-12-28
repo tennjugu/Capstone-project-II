@@ -42,31 +42,31 @@ function createDateLabel(forAttribute) {
   function createNameInput() {
     const nameInput = document.createElement('input');
     nameInput.type = 'text';
-    nameInput.id = 'rservation-username';
+    nameInput.id = 'reservation-username';
     nameInput.placeholder = 'name';
     nameInput.required = true;
   
     return nameInput;
   }
  
-function createInsightLabel() {
-  const insightsLabel = document.createElement('label');
-  insightsLabel.htmlFor = 'reservation-insights';
-  insightsLabel.className = 'reservation-insights';
-  insightsLabel.textContent = 'Insights';
-
-  return insightsLabel;
-}
-
-function createReservationInsightTextarea() {
-  const reservationInsightsTextarea = document.createElement('textarea');
-  reservationInsightsTextarea.id = 'reservation-insights';
-  reservationInsightsTextarea.placeholder = 'Your reservation details';
-  reservationInsightsTextarea.rows = '6';
-  reservationInsightsTextarea.required = true;
-
-  return reservationInsightsTextarea;
-}
+  function createInsightLabel() {
+    const insightsLabel = document.createElement('label');
+    insightsLabel.htmlFor = 'reservation-insights';
+    insightsLabel.className = 'reservation-insights';
+    insightsLabel.textContent = 'Insights';
+  
+    return insightsLabel;
+  }
+  
+  function createInsightTextarea() {
+    const reservationInsightsTextarea = document.createElement('textarea');
+    reservationInsightsTextarea.id = 'reservation-insights';
+    reservationInsightsTextarea.placeholder = 'Your reservation details';
+    reservationInsightsTextarea.rows = '6';
+    reservationInsightsTextarea.required = true;
+  
+    return reservationInsightsTextarea;
+  }
 
 function createReservationFormButton() {
   const submitButton = document.createElement('button');
@@ -142,14 +142,13 @@ function retrieveReservationLocalStore() {
   reservationStore = storedReservations || [];
 }
 
-
 function addReservationToReservations() {
-  const date = document.querySelector('#comment-date').value;
-  const name = document.querySelector('#comment-username').value;
-  const insight = document.querySelector('#comment-insights').value;
+  const date = document.querySelector('#reservation-date').value;
+  const name = document.querySelector('#reservation-username').value;
+  const insight = document.querySelector('#reservation-insights').value;
   const movieId = document.querySelector('.showId').textContent;
 
-  const newReservationEntry = new Reservation(date, name, insight, movieId);  // Updated class name
+  const newReservationEntry = new Reservation(date, name, insight, movieId);
   reservationStore.push(newReservationEntry);
   addReservation(movieId);
   createReservationLocalStore();
