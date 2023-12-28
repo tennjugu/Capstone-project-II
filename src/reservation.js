@@ -150,3 +150,16 @@ function retrieveReservationLocalStore() {
   const storedReservations = JSON.parse(localStorage.getItem('reservationStore'));
   reservationStore = storedReservations || [];
 }
+
+
+function addReservationToReservations() {
+  const date = document.querySelector('#comment-date').value;
+  const name = document.querySelector('#comment-username').value;
+  const insight = document.querySelector('#comment-insights').value;
+  const movieId = document.querySelector('.showId').textContent;
+
+  const newReservationEntry = new Reservation(date, name, insight, movieId);  // Updated class name
+  reservationStore.push(newReservationEntry);
+  addReservation(movieId);
+  createReservationLocalStore();
+}
