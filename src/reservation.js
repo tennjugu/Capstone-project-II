@@ -39,15 +39,6 @@ function createDateLabel(forAttribute) {
     return nameLabel;
   }
 
-  function createNameLabel() {
-    const nameLabel = document.createElement('label');
-    nameLabel.htmlFor = 'reservation-username';
-    nameLabel.className = 'reservation-username';
-    nameLabel.textContent = 'Name';
-  
-    return nameLabel;
-  }
-
   function createNameInput() {
     const nameInput = document.createElement('input');
     nameInput.type = 'text';
