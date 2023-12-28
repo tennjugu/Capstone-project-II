@@ -166,16 +166,3 @@ export {
   addCommentToComments,
   initializeComments,
 };
-
-function initializeReservations() {
-  retrieveReservationLocalStore();
-  const movieId = document.querySelector('.showId').textContent;
-  addReservation(movieId);
-}
-
-export {
-  generateCommentForm,
-  createCommentLogs,
-  addReservationToReservations,
-  initializeReservations,
-};

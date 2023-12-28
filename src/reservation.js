@@ -163,3 +163,16 @@ function addReservationToReservations() {
   addReservation(movieId);
   createReservationLocalStore();
 }
+
+function initializeReservations() {
+  retrieveReservationLocalStore();
+  const movieId = document.querySelector('.showId').textContent;
+  addReservation(movieId);
+}
+
+export {
+  generateCommentForm,
+  createCommentLogs,
+  addReservationToReservations,
+  initializeReservations,
+};
