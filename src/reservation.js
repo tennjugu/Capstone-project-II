@@ -30,10 +30,10 @@ function createDateInput(id) {
   return dateInput;
 }
 
-function createNameLabel() {
+function createReservationNameLabel() {
   const nameLabel = document.createElement('label');
-  nameLabel.htmlFor = 'comment-username';
-  nameLabel.className = 'comment-username';
+  nameLabel.htmlFor = 'reservation-username';
+  nameLabel.className = 'reservation-username';
   nameLabel.textContent = 'Name';
 
   return nameLabel;
@@ -86,8 +86,8 @@ function generateReservationForm() {
     createDateInput('reservation-start-date'),
     createDateLabel('reservation-end-date'),
     createDateInput('reservation-end-date'),
-    createNameLabel(),
-    createNameInput(),
+    createNameInput,
+    createReservationNameLabel,
     createInsightLabel(),
     createInsightTextarea(),
     createReservationFormButton(),
