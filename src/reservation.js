@@ -141,3 +141,12 @@ function addReservation(movieId) {
     reservationRecords.appendChild(eachRecord);
   }
 }
+
+function createReservationLocalStore() {
+  localStorage.setItem('reservationStore', JSON.stringify(reservationStore)); 
+}
+
+function retrieveReservationLocalStore() {
+  const storedReservations = JSON.parse(localStorage.getItem('reservationStore'));
+  reservationStore = storedReservations || [];
+}
