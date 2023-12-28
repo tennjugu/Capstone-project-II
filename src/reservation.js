@@ -109,3 +109,21 @@ function generateReservationForm() {
 
   return form;
 }
+
+function createReservationLogs() {
+  const reservationLogSection = document.createElement('div');
+  reservationLogSection.className = 'reservation-log-section';
+  reservationLogSection.id = 'reservation-log-section';
+
+  const reservationHeader = document.createElement('h2');
+  reservationHeader.className = 'reservation-header';
+  reservationHeader.textContent = 'Reservations';
+
+  const reservationRecords = document.createElement('div');
+  reservationRecords.className = 'reservation-records';
+
+  reservationLogSection.appendChild(reservationHeader);
+  reservationLogSection.appendChild(reservationRecords);
+
+  return reservationLogSection;
+}
