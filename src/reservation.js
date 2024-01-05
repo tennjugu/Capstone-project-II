@@ -130,7 +130,6 @@ function createReserveLocalStore() {
 }
 
 function retrieveReserveLocalStore() {
-  l
   const storedReserves = JSON.parse(localStorage.getItem('reserveStore'));
   reserveStore = storedReserves || [];
 }
