@@ -44,3 +44,20 @@ function createStartDateInput() {
 
   return startDateInput;
 }
+
+function createEndDateLabel() {
+  const endDateLabel = document.createElement('label');
+  endDateLabel.htmlFor = 'end-date';
+  endDateLabel.textContent = 'End Date';
+
+  return endDateLabel;
+}
+
+function createEndDateInput() {
+  const endDateInput = document.createElement('input');
+  endDateInput.type = 'date';
+  endDateInput.id = 'end-date';
+  endDateInput.required = true;
+
+  return endDateInput;
+}
