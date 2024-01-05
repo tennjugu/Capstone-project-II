@@ -108,3 +108,19 @@ function createReservationLogs() {
 
   return reservationLogSection;
 }
+
+function addReserve(movieId) {
+  const reservationRecords = document.querySelector('.reservation-records');
+  reservationRecords.innerHTML = '';
+  const filteredReserve = reserveStore.filter((obj) => obj.movieId === movieId);
+
+  for (let i = 0; i < filteredReserve.length; i += 1) {
+    const eachReservation = filteredReserve[i];
+    const reservationRecords = document.querySelector('.reservation-records');
+    reservationRecords.innerHTML = '';
+    const eachReserve = document.createElement('p');
+    eachReserve.className = 'new-reserve-record';
+    eachReserve.textContent = `${eachReservation.reserveName}: ${eachReservation.startDate} to ${eachReservation.endDate}`;
+    reservationRecords.appendChild(eachReserve);
+  }
+}
