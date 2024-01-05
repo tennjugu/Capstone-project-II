@@ -147,3 +147,9 @@ function addReserveToReservation() {
   addReserve(movieId);
   createReserveLocalStore();
 }
+
+function initializeReservation() {
+  retrieveReserveLocalStore();
+  const movieId = document.querySelector('.showId').textContent;
+  addReserve(movieId);
+}
