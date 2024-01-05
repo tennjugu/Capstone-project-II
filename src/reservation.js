@@ -8,3 +8,11 @@ class Reserve {
     this.movieId = movieId;
   }
 }
+
+function createReserveNameLabel() {
+  const nameLabel = document.createElement('label');
+  nameLabel.htmlFor = 'reservation-name';
+  nameLabel.textContent = 'Name';
+
+  return nameLabel;
+}
