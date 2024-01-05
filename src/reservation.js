@@ -135,7 +135,6 @@ function retrieveReserveLocalStore() {
 }
 
 function addReserveToReservation() {
-
   const reserveName = document.querySelector('#reservation-name').value;
   const startDate = document.querySelector('#start-date').value;
   const endDate = document.querySelector('#end-date').value;

@@ -175,6 +175,7 @@ function showMovieDetails(content, movieDetails) {
     startDate.value = '';
     endDate.value = '';
  });
+ 
 }
 
 export default showMovieDetails;
