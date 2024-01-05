@@ -49,7 +49,6 @@ function createYearElement(movieDetails) {
   return year;
 }
 
-
 function createGenreElement(movieDetails) {
   const genre = document.createElement('h3');
   genre.className = 'genre';
@@ -72,7 +71,6 @@ function createLanguageElement(movieDetails) {
   return language;
 }
 
-
 function createRatingElement(movieDetails) {
   const rating = document.createElement('h3');
   rating.className = 'rating';
@@ -86,7 +84,6 @@ function createRatingElement(movieDetails) {
   rating.textContent = ratingText;
   return rating;
 }
-
 
 function createShowSummaryElement(movieDetails) {
   const showSummary = document.createElement('div');
