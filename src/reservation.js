@@ -134,3 +134,16 @@ function retrieveReserveLocalStore() {
   const storedReserves = JSON.parse(localStorage.getItem('reserveStore'));
   reserveStore = storedReserves || [];
 }
+
+function addReserveToReservation() {
+
+  const reserveName = document.querySelector('#reservation-name').value;
+  const startDate = document.querySelector('#start-date').value;
+  const endDate = document.querySelector('#end-date').value;
+  const movieId = document.querySelector('.showId').textContent;
+
+  const newReserveEntry = new Reserve(reserveName, startDate, endDate, movieId);
+  reserveStore.push(newReserveEntry);
+  addReserve(movieId);
+  createReserveLocalStore();
+}
