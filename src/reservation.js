@@ -61,3 +61,13 @@ function createEndDateInput() {
 
   return endDateInput;
 }
+
+function createReserveButton() {
+  const reserveButton = document.createElement('button');
+  reserveButton.type = 'submit';
+  reserveButton.className = 'reserve-button';
+  reserveButton.textContent = 'Reserve';
+
+  return reserveButton;
+}
+
