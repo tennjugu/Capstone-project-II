@@ -1,6 +1,9 @@
 import {
   createCommentLogs, generateCommentForm, addCommentToComments, initializeComments,
 } from './comment.js';
+import {
+  generateReservationForm, createReservationLogs, addReserveToReservation, initializeReservation,
+} from './reservation.js';
 
 function createFullDetailsContainer() {
   const fullDetailsContainer = document.createElement('div');
@@ -46,6 +49,7 @@ function createYearElement(movieDetails) {
   return year;
 }
 
+
 function createGenreElement(movieDetails) {
   const genre = document.createElement('h3');
   genre.className = 'genre';
@@ -68,6 +72,7 @@ function createLanguageElement(movieDetails) {
   return language;
 }
 
+
 function createRatingElement(movieDetails) {
   const rating = document.createElement('h3');
   rating.className = 'rating';
@@ -81,6 +86,7 @@ function createRatingElement(movieDetails) {
   rating.textContent = ratingText;
   return rating;
 }
+
 
 function createShowSummaryElement(movieDetails) {
   const showSummary = document.createElement('div');
@@ -138,12 +144,18 @@ function showMovieDetails(content, movieDetails) {
   const imageCard = createImageCard(movieDetails);
   const commentLogSection = createCommentLogs();
   const commentSection = generateCommentForm();
+  const reserveLogSection = createReservationLogs();
+  const reserveSection = generateReservationForm();
+
   fullDetailsContainer.appendChild(imageCard);
   fullDetailsContainer.appendChild(commentLogSection);
   fullDetailsContainer.appendChild(commentSection);
+  fullDetailsContainer.appendChild(reserveLogSection);
+  fullDetailsContainer.appendChild(reserveSection);
   content.appendChild(fullDetailsContainer);
 
   initializeComments();
+  initializeReservation();
 
   const commentSubmit = document.querySelector('.comment-form');
   commentSubmit.addEventListener('submit', (event) => {
@@ -154,6 +166,18 @@ function showMovieDetails(content, movieDetails) {
     username.value = '';
     commentEntered.value = '';
   });
+
+  const reserveSubmit = document.querySelector('.reservation-form');
+  reserveSubmit.addEventListener('submit', (event) => {
+    const reserveName = document.querySelector('#reservation-name');
+    const startDate = document.querySelector('#start-date');
+    const endDate = document.querySelector('#end-date');
+    event.preventDefault();
+    addReserveToReservation();
+    reserveName.value = '';
+    startDate.value = '';
+    endDate.value = '';
+ });
 }
 
 export default showMovieDetails;
