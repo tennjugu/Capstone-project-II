@@ -16,3 +16,13 @@ function createReserveNameLabel() {
 
   return nameLabel;
 }
+
+function createReserveNameInput() {
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.id = 'reservation-name';
+  nameInput.placeholder = 'Your name';
+  nameInput.required = true;
+
+  return nameInput;
+}
