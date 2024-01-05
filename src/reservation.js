@@ -26,3 +26,12 @@ function createReserveNameInput() {
 
   return nameInput;
 }
+
+
+function createStartDateLabel() {
+  const startDateLabel = document.createElement('label');
+  startDateLabel.htmlFor = 'start-date';
+  startDateLabel.textContent = 'Start Date';
+
+  return startDateLabel;
+}
