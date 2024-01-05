@@ -27,7 +27,6 @@ function createReserveNameInput() {
   return nameInput;
 }
 
-
 function createStartDateLabel() {
   const startDateLabel = document.createElement('label');
   startDateLabel.htmlFor = 'start-date';
@@ -71,3 +70,23 @@ function createReserveButton() {
   return reserveButton;
 }
 
+function generateReservationForm() {
+  const form = document.createElement('form');
+  form.action = '';
+  form.className = 'reservation-form';
+
+  const reservationFields = [
+    createReserveNameLabel(),
+    createReserveNameInput(),
+    createStartDateLabel(),
+    createStartDateInput(),
+    createEndDateLabel(),
+    createEndDateInput(),
+    createReserveButton(),
+  ];
+
+  for (let i = 0; i < reservationFields.length; i += 1) {
+    form.appendChild(reservationFields[i]);
+  }
+  return form;
+}
