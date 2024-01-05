@@ -35,3 +35,12 @@ function createStartDateLabel() {
 
   return startDateLabel;
 }
+
+function createStartDateInput() {
+  const startDateInput = document.createElement('input');
+  startDateInput.type = 'date';
+  startDateInput.id = 'start-date';
+  startDateInput.required = true;
+
+  return startDateInput;
+}
