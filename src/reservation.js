@@ -153,3 +153,10 @@ function initializeReservation() {
   const movieId = document.querySelector('.showId').textContent;
   addReserve(movieId);
 }
+
+export {
+  generateReservationForm,
+  createReservationLogs,
+  addReserveToReservation,
+  initializeReservation,
+};
