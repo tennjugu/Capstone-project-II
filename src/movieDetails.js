@@ -174,7 +174,7 @@ function showMovieDetails(content, movieDetails) {
     reserveName.value = '';
     startDate.value = '';
     endDate.value = '';
- });
+  });
 }
 
 export default showMovieDetails;
