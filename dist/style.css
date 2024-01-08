@@ -257,6 +257,7 @@ content{
     background-color: #a8a29e;
 }
 
+
 .loader{
     position: fixed;
     top: 0;
@@ -402,7 +403,9 @@ footer {
     max-width: 60%;
     border-radius: 10px;
     margin-bottom: 10px;
+    height: 50%;
 }
+
 
 .bottom-footer {
     border-top: 1px solid #444;
@@ -468,8 +471,8 @@ footer {
     margin-top: 10px;
 }
 
-
-.comment-form {
+.comment-form,
+.reservation-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -482,7 +485,8 @@ footer {
 }
 
 .comment-form input,
-.comment-form textarea {
+.comment-form textarea,
+.reservation-form input {
     padding: 3px;
     border: 1px solid black;
     outline: none;
@@ -499,7 +503,8 @@ footer {
     max-width: 400px;
 }
 
-.comment-form button {
+.comment-form button,
+.reservation-form button {
     width: 100px;
     height: 30px;
 }
@@ -515,12 +520,14 @@ footer {
     margin: 5px 0px;
 }
 
-.comment-form button:hover {
+.comment-form button:hover,
+.reservation-form button:hover {
     color: white;
     background-color: #a8a29e;
 }
 
-.comment-form button  {
+.comment-form button,
+.reservation-form button  {
     background-color: white;
     color: #171717;
     font-size: 14px;
@@ -528,6 +535,15 @@ footer {
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid black;
+}
+
+.reservation-header {
+   text-align: center;
+   margin-top: 100px;
+}
+
+.reservation-records {
+    text-align: center;
 }
 
 @media(max-width:760px){
@@ -564,11 +580,13 @@ footer {
         margin-left: 1rem;
     }
 
-    .comment-form input {
+    .comment-form input,
+    .reservation-form input {
         margin-left: 0;
     }
 
-    .comment-form {
+    .comment-form,
+    .reservation-form {
         margin-left: 10px;
         margin-right: 10px;
     }

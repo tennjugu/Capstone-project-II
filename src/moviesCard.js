@@ -101,6 +101,13 @@ function createAppend(content, show) {
   const reservationButton = document.createElement('button');
   reservationButton.textContent = 'Reservations';
   reservationButton.classList.add('reservation');
+  reservationButton.id = 'reservation-log-section';
+  reservationButton.addEventListener('click', () => {
+    content.style.alignItems = 'normal';
+    content.innerHTML = '';
+    showMovieDetails(content, show);
+    scrollIntoView.call(reservationButton);
+  });
 
   actionsDiv.appendChild(commentButton);
   actionsDiv.appendChild(reservationButton);
