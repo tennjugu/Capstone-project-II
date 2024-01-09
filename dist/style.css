@@ -328,6 +328,7 @@ footer {
 .links {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
 
 .footer-links h3,
@@ -352,13 +353,11 @@ footer {
 
 .social-links u {
     font-weight: bold;
-    color: #808080;
 }
   
 .social-links a {
     color: #fff;
     text-decoration: none;
-    margin-right: 10px;
     font-size: 1.3em;
     transition: color 0.3s ease-in-out;
 }
@@ -373,38 +372,10 @@ footer {
     gap: 50px;
 } 
 
-#partners {
+.partners{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 30px;
-}
-  
-.partner-names {
-    display: flex;
-}
 
-.partners-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px;
-}
-  
-.partner {
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-  
-.partner:hover {
-    transform: scale(1.05);
-}
-  
-.partner img {
-    max-width: 60%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    height: 50%;
-}
 
 
 .bottom-footer {
