@@ -353,11 +353,13 @@ footer {
 
 .social-links u {
     font-weight: bold;
+    color: #fff;
 }
   
 .social-links a {
     color: #fff;
     text-decoration: none;
+    margin-right: 1rem;
     font-size: 1.3em;
     transition: color 0.3s ease-in-out;
 }
