@@ -377,7 +377,13 @@ footer {
 .partners{
     display: flex;
     flex-direction: column;
+}
 
+.partner-names{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 .bottom-footer {
