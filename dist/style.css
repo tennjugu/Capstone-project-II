@@ -653,6 +653,11 @@ footer {
         padding: 0;
     }
 
+    header, 
+    footer {
+        overflow: auto;
+    }
+    
     .year, 
     .genre, 
     .language, 
