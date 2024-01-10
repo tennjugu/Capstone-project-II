@@ -19,6 +19,11 @@ header {
     position:static;
 }
 
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+
 ul {
     display: flex;
     justify-content: end;
