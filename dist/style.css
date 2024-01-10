@@ -542,6 +542,10 @@ footer {
         padding-left: 0.5rem;
     }
 
+    .search-bar{
+        margin-top: 1rem;
+    }
+
     h1 {
         font-size: 1.7em;
         width: 100%;
