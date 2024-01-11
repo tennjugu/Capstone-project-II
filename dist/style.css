@@ -19,6 +19,11 @@ header {
     position:static;
 }
 
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+
 ul {
     display: flex;
     justify-content: end;
@@ -328,6 +333,7 @@ footer {
 .links {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
 
 .footer-links h3,
@@ -350,15 +356,10 @@ footer {
     margin-left: 100px;
 }
 
-.social-links u {
-    font-weight: bold;
-    color: #808080;
-}
-  
 .social-links a {
     color: #fff;
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 1rem;
     font-size: 1.3em;
     transition: color 0.3s ease-in-out;
 }
@@ -373,39 +374,27 @@ footer {
     gap: 50px;
 } 
 
-#partners {
+.partners{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 30px;
-}
-  
-.partner-names {
-    display: flex;
 }
 
-.partners-container {
+.partner-names{
     display: flex;
-    justify-content: space-between;
-    max-width: 800px;
+    justify-content: space-around;
+    align-items: center;
 }
-  
-.partner {
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+
+.partner img{
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
 }
-  
-.partner:hover {
+
+.partner img:hover{
     transform: scale(1.05);
 }
-  
-.partner img {
-    max-width: 60%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    height: 50%;
-}
-
 
 .bottom-footer {
     border-top: 1px solid #444;
@@ -553,6 +542,10 @@ footer {
         padding-left: 0.5rem;
     }
 
+    .search-bar{
+        margin-top: 1rem;
+    }
+
     h1 {
         font-size: 1.7em;
         width: 100%;
@@ -662,7 +655,7 @@ footer {
 
     header, 
     footer {
-        width: 100vw;
+        overflow: auto;
     }
     
     .year, 
@@ -670,5 +663,29 @@ footer {
     .language, 
     .rating {
         font-size: 1rem;
+    }
+    
+    .footer-section{
+        padding: 0 1rem;
+    }
+
+    .links{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-links{
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .partner-names{
+        display: inline-block;
+    }
+
+    .partner img{
+        width: 300px;
+        height: 320px;
     }
 }
