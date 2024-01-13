@@ -27,6 +27,7 @@ searchBtn.addEventListener('click', (event) => {
   event.preventDefault();
   content.innerHTML = '';
   getSearchShow();
+  closeMenu();
 });
 
 export { toggleHamburger, windowClick, closeMenu };
