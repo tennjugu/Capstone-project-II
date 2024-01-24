@@ -14,7 +14,6 @@ Welcome to the Capstone II project for TOP Dev Cohort-2! This app interacts with
 8. [Usage](#usage)
 9. [Contributing](#contributing)
 10. [Contact](#contact)
-11. [License](#license)
 
 ## Introduction
 
@@ -59,26 +58,34 @@ The project is built using the following technologies:
 ## Project Structure
 
 Capstone-project-II/
-|-- css/
-|   |-- style.css
-|-- img/
-|-- js/
+|- dist/
+|   |-- asset
+|   |-- screenshots
+|   |--index.html
+|   |--main.js
+|   |--style.css
+|-Src/
 |   |-- activebtn.js
 |   |-- comment.js
 |   |-- home.js
 |   |-- likes.js
 |   |-- loader.js
 |   |-- movieDetails.js
+|   |-- moviecards.js
 |   |-- reservation.js
+|   |-- script.js
 |   |-- searchShow.js
 |   |-- toggleMenu.js
 |   |-- tvShows.js
+|-- .eslintrc.json
 |-- .gitignore
-|-- CODE_OF_CONDUCT.md
-|-- CONTRIBUTING.md
-|-- LICENSE.md
-|-- README.md
+|-- .hintrc
+|-- .stylintrc.json
 |-- index.html
+|-- package-locl.json
+|-- package.json
+|-- README.md
+|-- webpack.config.js
 
 ## Installation
 
@@ -106,11 +113,11 @@ To set up the project locally, follow these steps:
 
 Once the installation is complete, you can run the application using the following command:
 
-   ```bash
+  ``` bash
    npm start
    ```
 
-This will start the application, and you can access it through your web browser at [http://localhost:3000](http://localhost:3000).
+This will start the application, using live server
 
 ## Contributing
 
@@ -131,7 +138,3 @@ Feel free to reach out if you have any questions or need further clarification o
 ## Contact
 
 For inquiries, please contact [Tenerat Jugu, George Ali, and Joshua Nathaniel] at <topdevelopers@gmail.com>.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE.md).
