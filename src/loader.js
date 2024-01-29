@@ -5,7 +5,7 @@ function preloader() {
     loader.classList.add('loader-hidden');
 
     loader.addEventListener('transitionend', () => {
-      document.body.removeChild('loader');
+      loader.style.display = 'none';
     });
   });
 }
