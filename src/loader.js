@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 function preloader() {
   window.addEventListener('load', () => {
     const loader = document.querySelector('#loader');
