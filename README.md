@@ -1,6 +1,6 @@
 # Capstone-project-II
 
-Welcome to the Capstone II project for TOP Dev Cohort-2! This app interacts with the [TVMazi API](https://api.tvmaze.com/) to fetch and display information about TV shows. The application also allows users to like, comment, and make reservations for shows, storing interactions locally.
+Welcome to the Capstone II project for TOP Dev Cohort-2! This app interacts with the [TVMaze API](https://api.tvmaze.com/) to fetch and display information about TV shows. The application also allows users to like, comment, and make reservations for shows, storing interactions locally.
 
 ## Table of Contents
 
@@ -17,11 +17,11 @@ Welcome to the Capstone II project for TOP Dev Cohort-2! This app interacts with
 
 ## Introduction
 
-The Capstone II project for TOP Dev Cohort-2 focuses on building an application that interacts with the [TVMazi API](https://api.tvmaze.com/). The app is designed to fetch and display information about searched shows and TV shows available on the API, as well as details for each show. Users can like, comment, and make reservations for shows, with interactions stored locally.
+The Capstone II project for TOP Dev Cohort-2 focuses on building an application that interacts with the [TVMaze API](https://api.tvmaze.com/). The app is designed to fetch and display information about searched shows and TV shows available on the API, as well as details for each show. Users can like, comment, and make reservations for shows, with interactions stored locally.
 
 ## Features
 
-- **TVMazi API Integration:** Fetch data from TVMazi API for searched shows and TV shows available on the API, and the details about each show.
+- **TVMaze API Integration:** Fetch data from TVMaze API for searched shows and TV shows available on the API, and the details about each show.
 - **User Interaction:** Users can like, comment, and make reservations for shows.
 - **Local Storage:** Save user interactions locally to provide a seamless experience.
 
