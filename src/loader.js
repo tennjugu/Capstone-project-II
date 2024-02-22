@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 function preloader() {
   window.addEventListener('load', () => {
     const loader = document.querySelector('#loader');
@@ -5,7 +7,7 @@ function preloader() {
     loader.classList.add('loader-hidden');
 
     loader.addEventListener('transitionend', () => {
-      document.body.removeChild('loader');
+      loader.style.display = 'none';
     });
   });
 }
